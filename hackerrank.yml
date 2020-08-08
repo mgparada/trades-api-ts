@@ -1,0 +1,18 @@
+---
+version: 1.0
+configuration:
+  has_webserver: true
+  readonly_paths:
+    - internal-test-ro/*
+    - config.json
+  scoring:
+    command: npm run internal-test-ro
+    files:
+    - unit.xml
+  ide_config:
+    default_open_files:
+    - "app.ts"
+    project_menu:
+      run: npm start
+      install: npm install
+      test: npm run internal-test-ro
